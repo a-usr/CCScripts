@@ -1,5 +1,3 @@
-
-
 local front = peripheral.wrap("front")
 local back = peripheral.wrap("back")
 local monitors = {peripheral.find("monitor") }
