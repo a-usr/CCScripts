@@ -6,7 +6,6 @@ while true do
     local UTilt = back.getAnalogInput("front")
     local LTwist = front.getAnalogInput("top")
     local RTwist = back.getAnalogInput("top")
-    local monitors = { peripheral.find("monitor") }
     for _, monitor in pairs(monitors) do
         monitor.setCursorPos(0, 0)
         monitor.write("DTilt: ")
