@@ -6,7 +6,7 @@ while true do
     local UTilt = back.getAnalogInput("front")
     local LTwist = front.getAnalogInput("top")
     local RTwist = back.getAnalogInput("top")
-    for _, monitor in pairs(monitors) do
+    --[[for _, monitor in pairs(monitors) do
         monitor.setCursorPos(0, 0)
         monitor.write("DTilt: ")
         monitor.write(DTilt)
@@ -20,7 +20,7 @@ while true do
         monitor.write("RTwist: ")
         monitor.write(RTwist)
         monitor.setCursorPos(0, 0)
-    end
+    end 
     print("DTilt: ")
     print(DTilt)
     print("UTilt: ")
@@ -28,10 +28,22 @@ while true do
     print("LTwist: ")
     print(LTwist)
     print("RTwist: ")
-    print(RTwist)
-    front.setAnalogOutput("left", ((DTilt-LTwist)+(RTwist-UTilt)))
-    front.setAnalogOutput("right", ((DTilt-RTwist)+(LTwist-UTilt)))
-    back.setAnalogOutput("left", ((UTilt-LTwist)+(RTwist-DTilt)))
-    back.setAnalogOutput("right", ((UTilt-RTwist)+(LTwist-DTilt)))
-    os.pullEvent("redstone")
+    print(RTwist)]]--
+    FrL = (DTilt-LTwist)+(RTwist-UTilt)
+    FrR = (DTilt-RTwist)+(LTwist-UTilt)
+    BL = (UTilt-LTwist)+(RTwist-DTilt)
+    BR = (UTilt-RTwist)+(LTwist-DTilt)
+    if FrL > 0 then
+        front.setAnalogOutput("left", FrL)
+    end
+    if FrR > 0 then
+        front.setAnalogOutput("right", FrR)
+    end
+    if BL > 0 then
+        back.setAnalogOutput("left", BL)
+    end
+    if BR > 0 then
+        back.setAnalogOutput("right", BR)
+    end
+    -- os.pullEvent("redstone") --
 end
