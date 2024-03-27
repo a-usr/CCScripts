@@ -33,5 +33,5 @@ while true do
     front.setAnalogOutput("right", ((DTilt-RTwist)+(LTwist-UTilt)))
     back.setAnalogOutput("left", ((UTilt-LTwist)+(RTwist-DTilt)))
     back.setAnalogOutput("right", ((UTilt-RTwist)+(LTwist-DTilt)))
-    
+    os.pullEvent("redstone")
 end
