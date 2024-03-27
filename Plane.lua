@@ -37,19 +37,19 @@ while true do
     FrR = (DTilt-RTwist)+(LTwist-UTilt)
     BL = (UTilt-LTwist)+(RTwist-DTilt)
     BR = (UTilt-RTwist)+(LTwist-DTilt)
-    if not FrL == FrLprev then
+    if not (FrL == FrLprev) then
         FrLprev = FrL
         front.setAnalogOutput("left", FrL)
     end
-    if not FrR == FrRprev then
+    if not (FrR == FrRprev) then
         FrRprev = FrR
         front.setAnalogOutput("right", FrR)
     end
-    if not BL == BLprev then
+    if not (BL == BLprev) then
         BLprev = BL
         back.setAnalogOutput("left", BL)
     end
-    if not BR == BRprev then
+    if not( BR == BRprev) then
         BRprev = BR
         back.setAnalogOutput("right", BR)
     end
